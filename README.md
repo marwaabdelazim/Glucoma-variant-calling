@@ -1,1 +1,1 @@
-# Glucoma-varint-calling
+# Glucoma-variant-calling
