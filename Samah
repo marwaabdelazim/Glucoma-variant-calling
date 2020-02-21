@@ -1,1 +1,11 @@
-
+# Activate the enviornment
+conda activate ngs1
+# Create a directory for the tutorial
+mkdir glaucomaproject && cd glaucomaproject
+# Downloading and installing the SRA Toolkit
+wget "http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-centos_linux64.tar.gz"
+tar -xzf sratoolkit.current-centos_linux64.tar.gz
+sudo apt install sra-toolkit
+mkdir sample_data && cd sample_data
+# sup setting of data and splitting of reads using SRA Toolkit
+fastq-dump -I --split-files -X 8000000 SRR5858162
