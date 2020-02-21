@@ -10,4 +10,4 @@ cd sratoolkit/ cd bin
 sudo apt sratoolkit (it was asked to install)
 ./vdb-config -i # (enable remote access- enter- save- exit)
 ***down load 15 million reads for PCAG sample  (SRR5858157) R1&R2) by using the fastq dump
-fastq-dump -X 5 -Z SRR390728 |fastq-dump -I --split-files SRR5858157
+fastq-dump -X 15000000 -Z SRR5858157 |fastq-dump -I --split-files SRR5858157
