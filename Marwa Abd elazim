@@ -1,1 +1,24 @@
-
+###Downloading glaucoma sample file
+##SRA Toolkit installation
+wget "http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-centos_linux64.tar.gz"
+#unbacking Toolkit
+tar -xzf sratoolkit.current-centos_linux64.tar.gz
+#Configuring the Toolkit
+cd bin
+./vdb-config -i
+##Make directory and start download 
+$mkdir Project
+$cd Project
+$ fastq-dump -X 15000000 -Z SRR5858204 | fastq-dump -I --split-files SRR5858204
+*Error
+Command 'fastq-dump' not found
+$ sudo apt install sra-toolkit
+$ fastq-dump -X 15000000 -Z SRR5858204 | fastq-dump -I --split-files SRR5858204
+*Error
+fastq-dump.2.8.2 err: libs/kns/linux/sysendpoint.c:148:KNSManagerInitDNSEndpoint: timeout exhausted while reading file within network system module - Failed to KHttpFileRead('https://sra-downloadb.be-md.ncbi.nlm.nih.gov/sos2/sra-pub-run-11/SRR5858204/SRR5858204.1' ())
+#using another command to download and split reads in the same command 
+$fastq-dump -I --split-files -X 8000000 SRR5858204
+*Error
+https://github.com/ncbi/sra-tools/issues/102
+:( Icannot solve so i choose another sample (SRR5858223)
+$fastq-dump -I --split-files -X 8000000 SRR5858223
